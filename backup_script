@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Script to backup a directory
+
+SOURCE_DIR="/home/shivam/hello"
+DEST_DIR="/home/shivam/Desktop"
+TIMESTAMP=$(date +"%Y%m%d%H%M")
+
+tar -czf $DEST_DIR/backup-$TIMESTAMP.tar.gz $SOURCE_DIR
+
+echo "Backup complete."
+
