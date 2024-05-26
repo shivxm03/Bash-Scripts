@@ -1,0 +1,10 @@
+#script to archive and compress the file
+
+#archive file
+sudo tar -cvf compress_me.tar compress_me
+
+#compress file
+gzip compress_me.tar
+
+#decompress file
+gzip -d compress_me.tar.gz
