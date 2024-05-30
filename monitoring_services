@@ -1,0 +1,10 @@
+#!/bin/bash
+
+SERVICES=("service1" "service2" "service3")
+
+for service in "${SERVICES[@]}"; do
+    systemctl status $service > /dev/null 2>&1
+    if [ $? -ne 0 ]; then
+        echo "Service $service is down!" | mail -s "Service Down" admin@example.com
+    fi
+done
